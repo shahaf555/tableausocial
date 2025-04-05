@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Hub 📊✨</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(90deg, #4facfe, #00f2fe);
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            animation: fadeInDown 1s ease;
+        }
+
+        nav {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #6e8efb;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #a777e3;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        h2 {
+            color: #4facfe;
+            border-bottom: 3px solid #a777e3;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tableau-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #f0f0f0;
+            border-radius: 10px;
+        }
+
+        .tableau-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .stat-card {
+            background: linear-gradient(45deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: white;
+            background: rgba(0,0,0,0.1);
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Data Analytics Hub 📈🚀</h1>
+        <p>Where Numbers Tell Amazing Stories! ✨</p>
+    </header>
+
+    <nav>
+        <a href="#overview">Overview 🌟</a>
+        <a href="#tableau">Tableau Insights 📊</a>
+        <a href="#stats">Quick Stats ⚡</a>
+        <a href="#contact">Contact Us 📬</a>
+    </nav>
+
+    <div class="container">
+        <div class="section" id="overview">
+            <h2>Analytics Overview 🌈</h2>
+            <p>Welcome to our data analytics paradise! Dive into insights, trends, and visualizations that make data fun and meaningful. 🎉</p>
+        </div>
+
+        <div class="section" id="tableau">
+            <h2>Tableau Visualization Masterpiece 🎨</h2>
+            <p>Explore our interactive social media analytics dashboard below - your window to data magic! 🪄</p>
+            <div class="tableau-container">
+                <iframe src="https://public.tableau.com/views/social2_17431459840100/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+
+        <div class="section" id="stats">
+            <h2>Quick Stats ⚡</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>10K+</h3>
+                    <p>Data Points 📍</p>
+                </div>
+                <div class="stat-card">
+                    <h3>50+</h3>
+                    <p>Charts 📊</p>
+                </div>
+                <div class="stat-card">
+                    <h3>99%</h3>
+                    <p>Accuracy 🎯</p>
+                </div>
+                <div class="stat-card">
+                    <h3>24/7</h3>
+                    <p>Updates ⏰</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section" id="contact">
+            <h2>Get in Touch! 📩</h2>
+            <p>Have questions? Want more data magic? Email us at: <a href="mailto:analytics@fun.com">analytics@fun.com</a> 💌</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Data Analytics Hub | Made with ❤️ & ☕</p>
+    </footer>
+
+    <script>
+        // Smooth scroll for nav links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Animation trigger on scroll
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
