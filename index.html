@@ -88,6 +88,13 @@
             border: none;
         }
 
+        .fallback-message {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+            color: #666;
+        }
+
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -149,8 +156,8 @@
             <h2>Tableau Visualization Masterpiece 🎨</h2>
             <p>Explore our interactive social media analytics dashboard below - your window to data magic! 🪄</p>
             <div class="tableau-container">
-                <iframe src="https://public.tableau.com/views/social2_17431459840100/Dashboard2?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                    allowfullscreen></iframe>
+                <iframe src="https://public.tableau.com/views/social2_17431459840100/Dashboard2?:language=en-US&:embed=y&:display_count=n&:origin=viz_share_link&:toolbar=yes&:tabs=no" allowfullscreen></iframe>
+                <div class="fallback-message">Oops! The dashboard isn’t loading. Check your connection or try refreshing! 🌐🔄</div>
             </div>
         </div>
 
@@ -209,6 +216,16 @@
         sections.forEach(section => {
             observer.observe(section);
         });
+
+        // Check if Tableau iframe loads
+        const iframe = document.querySelector('.tableau-container iframe');
+        const fallback = document.querySelector('.fallback-message');
+        iframe.onload = () => {
+            fallback.style.display = 'none';
+        };
+        iframe.onerror = () => {
+            fallback.style.display = 'block';
+        };
     </script>
 </body>
 </html>
